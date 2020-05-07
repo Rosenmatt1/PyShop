@@ -1,6 +1,11 @@
-<h1> Products </h1>
-<ul> 
-  { % for product in products %}
-  <li>{{ product.name }}</li>
-  { % endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1> Products </h1>
+  <ul> 
+    <!-- template tag used to dynamically render logic like ifs and loops -->
+    { % for product in products %}
+    <li>{{ product.name }} (${{ product.price }}) </li>
+    { % endfor %}
+  </ul>
+{% endblock %}
